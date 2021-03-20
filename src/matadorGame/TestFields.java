@@ -1,6 +1,5 @@
 package matadorGame;
 
-import matadorGame.cards.DeckOfCards;
 import matadorGame.player.Player;
 
 public class TestFields {
