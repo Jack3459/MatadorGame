@@ -46,6 +46,10 @@ gameBoard.fields[12].landOnField(player3);
     gameBoard.fields[2].landOnField(player1);
     gameBoard.fields[2].landOnField(player1);
     player1.getHappyCards();
+    gameBoard.fields[2].landOnField(player1);
+    gameBoard.fields[2].landOnField(player1);
+    player1.getHappyCards();
+
 
 
 
