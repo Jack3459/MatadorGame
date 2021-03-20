@@ -5,6 +5,8 @@ public class HappyCard {
   private String doSomething;
   private int number;
 
+
+
   public HappyCard(int  number, String doSomething){
     this.doSomething = doSomething;
     this.number = number;

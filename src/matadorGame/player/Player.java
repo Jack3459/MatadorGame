@@ -1,5 +1,6 @@
 package matadorGame.player;
 
+import matadorGame.cards.HappyCard;
 import matadorGame.fields.Brewery;
 import matadorGame.fields.Ownable;
 import matadorGame.fields.Shipping;
@@ -11,6 +12,7 @@ public class Player {
   private final DiceCup diceCup = new DiceCup(); //Change to 1 if only a single throw is wanted.
   private String playerName;
   private ArrayList<Ownable> cardsOwned = new ArrayList<Ownable>();
+  private ArrayList<HappyCard> happyCardsOwned = new ArrayList<HappyCard>();
 
   private int money = 30000;
   private boolean inPrison;
@@ -85,6 +87,7 @@ public class Player {
   public void addCards(Ownable ownable) {
     cardsOwned.add(ownable);
   }
+  public void addHappyCard(HappyCard happyCard) { happyCardsOwned.add(happyCard); }
 
   public String toString() {
     return "Players name is: " + playerName + "\nThe account balance is: " + money;
@@ -93,6 +96,12 @@ public class Player {
   public void getCards() {
     for (Ownable n : cardsOwned) {
       System.out.println("Property: " + n.getName());
+    }
+  }
+
+  public void getHappyCards() {
+    for (HappyCard n : happyCardsOwned) {
+      System.out.println("Happy Card: " + n.getNumber());
     }
   }
 

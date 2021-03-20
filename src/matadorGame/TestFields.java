@@ -1,5 +1,6 @@
 package matadorGame;
 
+import matadorGame.cards.DeckOfCards;
 import matadorGame.player.Player;
 
 public class TestFields {
@@ -8,7 +9,8 @@ public class TestFields {
   private static Player player2 = new Player("Jackie");
   private static Player player3 = new Player("Christoffer");
   private static Player player4 = new Player("Kamille");
-  public static GameBoard gameBoard = new GameBoard();
+  private static GameBoard gameBoard = new GameBoard();
+
 
   public static void main(String[] args) {
 
@@ -37,11 +39,14 @@ public class TestFields {
     /* test buy option
     gameBoard.fields[3].landOnField(player3);
     player3.getCards();
-
+gameBoard.fields[12].landOnField(player3);
+    player3.getCards();
      */
 
-    gameBoard.fields[12].landOnField(player3);
-    player3.getCards();
+    gameBoard.fields[2].landOnField(player1);
+    gameBoard.fields[2].landOnField(player1);
+    player1.getHappyCards();
+
 
 
   }

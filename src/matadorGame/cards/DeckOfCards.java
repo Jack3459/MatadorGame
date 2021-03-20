@@ -8,7 +8,12 @@ public class DeckOfCards {
   private ArrayList<HappyCard> deckCards = new ArrayList<>();
   private int top;
 
-  public void renderDeck(){
+  public DeckOfCards() {
+    renderDeck();
+    shuffleDeck();
+  }
+
+  public void renderDeck() {
 
     deckCards.add(new HappyCard(1, "Do something"));
     deckCards.add(new HappyCard(2, "Do something else"));
@@ -16,30 +21,36 @@ public class DeckOfCards {
     deckCards.add(new HappyCard(4, "Keep doing stuff"));
     deckCards.add(new HappyCard(5, "Do even more stuff"));
 
-    top = deckCards.size()-1;
+    top = deckCards.size() - 1;
   }
 
-  public void printDeck(){
+  public void printDeck() {
 
-    for (HappyCard d: deckCards
-         ) {
-      System.out.println(d.getNumber() +  ". " + d.getDoSomething());
+    for (HappyCard d : deckCards
+    ) {
+      System.out.println(d.getNumber() + ". " + d.getDoSomething());
     }
   }
 
-  public void shuffleDeck(){
+  public void shuffleDeck() {
 
     Collections.shuffle(deckCards);
 
   }
 
-  public void nextCard(){
-
-    if (top <0){
+  public HappyCard drawCard() {
+    if (top < 0) {
       System.out.println("No more cards");
+      shuffleDeck();
+      top = deckCards.size() - 1;
     }
-    else
-      System.out.println(deckCards.get(top).getNumber() + deckCards.get(top).getDoSomething());
-      top -=1;
+
+    System.out.println(deckCards.get(top).getNumber() + ". " + deckCards.get(top).getDoSomething());
+    top -= 1;
+
+
+
+    return deckCards.get(top + 1);
   }
+
 }

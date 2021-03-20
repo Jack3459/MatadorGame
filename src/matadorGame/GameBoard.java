@@ -1,5 +1,6 @@
 package matadorGame;
 
+import matadorGame.cards.HappyCard;
 import matadorGame.fields.*;
 
 import java.util.ArrayList;
@@ -23,14 +24,12 @@ public class GameBoard {
 
     fields[0] = new Start("Start", 1);
     fields[1] = (new Street("Rødovrevej", 2, 50, 1200));
-// lykkekort (3)
-    fields[2] = new Refuge("Empty", 3);
+    fields[2] = new HappyCardField("Happy card", 3);
     fields[3] = (new Street("Hvidovrevej", 4, 50, 1200));
     fields[4] = (new Taxes("StateTax", 5));
     fields[5] = (new Shipping("Rederiet Lindinger A/S", 6, 4000));
     fields[6] = (new Street("Roskildevej", 7, 150, 2000));
-//lykkekort (8)
-    fields[7] = new Refuge("Empty", 8);
+    fields[7] = new HappyCardField("Happy card", 8);
     fields[8] = (new Street("Valby Langgade", 9, 150, 2000));
     fields[9] = (new Street("Allégade", 10, 200, 2400));
     fields[10] = (new PrisonVisit("På Besøg", 11));
@@ -40,14 +39,12 @@ public class GameBoard {
     fields[14] = (new Street("Gl. Kongevej", 15, 550, 3200));
     fields[15] = (new Shipping("Grenaa-hundested", 16, 4000));
     fields[16] = (new Street("Bernstorffsvej", 17, 600, 3600));
-//lykkekort (18)
-    fields[17] = new Refuge("Empty", 18);
+    fields[17] = new HappyCardField("Happy card", 18);
     fields[18] = (new Street("Hellerupvej", 19, 600, 3600));
     fields[19] = (new Street("Strandvej", 20, 650, 4000));
     fields[20] = (new Refuge("Parking", 21));
     fields[21] = (new Street("Trianglen", 22, 700, 4400));
-//Lykkekort (23)
-    fields[22] = new Refuge("Empty", 23);
+    fields[22] = new HappyCardField("Happy card", 23);
     fields[23] = (new Street("Østerbrogade", 24, 700, 4400));
     fields[24] = (new Street("Grønningen", 25, 750, 4800));
     fields[25] = (new Shipping("Mols-Linien A/S", 26, 4000));
@@ -58,12 +55,10 @@ public class GameBoard {
     fields[30] = (new Prison("In prison", 31));
     fields[31] = (new Street("Amagertorv", 32, 800, 6000));
     fields[32] = (new Street("Vimmelskaftet", 33, 800, 6000));
-//lykkekort (34)
-    fields[33] = new Refuge("Empty", 34);
+    fields[33] = new HappyCardField("Happy card", 34);
     fields[34] = (new Street("Nygade", 35, 850, 6400));
     fields[35] = (new Shipping("Skandanavisk Liniatrafik A/S", 36, 4000));
-//lykkekort (37)
-    fields[36] = new Refuge("Empty", 37);
+    fields[36] = new HappyCardField("Happy card", 37);
     fields[37] = (new Street("Frederiksborggade", 38, 900, 7000));
     fields[38] = (new Taxes("Tax", 39));
     fields[39] = (new Street("Rådhuspladsen", 40, 1000, 8000));
