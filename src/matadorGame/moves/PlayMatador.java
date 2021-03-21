@@ -1,6 +1,7 @@
 package matadorGame.moves;
 
 import matadorGame.GameBoard;
+import matadorGame.cards.DeckOfCards;
 import matadorGame.player.Player;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class PlayMatador {
   private ArrayList<Player> players = new ArrayList<>();
 
   private GameBoard gameBoard = new GameBoard();
+  private DeckOfCards deckOfCards = new DeckOfCards();
   private Scanner scanner = new Scanner(System.in);
 
 
@@ -119,7 +121,18 @@ public class PlayMatador {
 
     gameBoard.getFields()[move].landOnField(player);
 
+    if (player.isOnHappyCard()) {
+      ifPlayerHitHappyCard(player);
+    }
+
     ifPlayerHitPair(player); // one more turn if pair
+
+  }
+
+  private void ifPlayerHitHappyCard(Player player) {
+
+    player.addHappyCard(deckOfCards.drawCard());
+    player.setIsOnHappyCard(false);
 
   }
 

@@ -19,6 +19,8 @@ public class Player {
   private int prisonCount;
   private int position = 0;
   private int pairsInRow = 0;
+
+  private boolean isOnHappyCard;
   // We didn't make a bank-Class because we decided to start with a specific amount of money.
   // Therefore the bank isn't used.
 
@@ -53,6 +55,8 @@ public class Player {
 
   public int getPairsInRow() { return pairsInRow; }
 
+  public boolean isOnHappyCard() { return isOnHappyCard; }
+
   // Setter
   public void setPlayerName(String playerName) { this.playerName = playerName; }
 
@@ -63,6 +67,8 @@ public class Player {
   public void setPrisonCount(int prisonCount){
     this.prisonCount = prisonCount;
   }
+
+  public void setIsOnHappyCard(boolean isOnHappyCard) { this.isOnHappyCard = isOnHappyCard; }
 
   public void setPosition(int position) {
 

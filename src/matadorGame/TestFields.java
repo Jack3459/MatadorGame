@@ -43,12 +43,17 @@ gameBoard.fields[12].landOnField(player3);
     player3.getCards();
      */
 
-    gameBoard.fields[2].landOnField(player1);
-    gameBoard.fields[2].landOnField(player1);
+    /* teset Happy card
+    gameBoard.getFields()[2].landOnField(player1);
+    gameBoard.getFields()[7].landOnField(player1);
     player1.getHappyCards();
-    gameBoard.fields[2].landOnField(player1);
-    gameBoard.fields[2].landOnField(player1);
+    gameBoard.getFields()[17].landOnField(player1);
+    gameBoard.getFields()[33].landOnField(player1);
     player1.getHappyCards();
+
+     */
+
+    System.out.println(gameBoard.getFields()[1].toString());
 
 
 

@@ -58,8 +58,8 @@ public class Brewery extends Ownable {
     return "====================\n" +
         getNumber() + ". " + getName() + "\n" +
 
-        "Rent 1 card: " + "Dice eys" + "\n" +
-        "Rent 2 cards: " + "Dice eys times 2"+ "\n" +
+        "Rent 1 card: " + "Dice eys times 100" + "\n" +
+        "Rent 2 cards: " + "Dice eys times 200"+ "\n" +
 
 
         "Sales price: " + getSalePrice() + "\n" +

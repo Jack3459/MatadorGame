@@ -40,7 +40,7 @@ public class DeckOfCards {
 
   public HappyCard drawCard() {
     if (top < 0) {
-      System.out.println("No more cards");
+      System.out.println("No more cards, shuffling the deck...");
       shuffleDeck();
       top = deckCards.size() - 1;
     }
