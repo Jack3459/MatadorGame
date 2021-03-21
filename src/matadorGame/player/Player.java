@@ -21,6 +21,7 @@ public class Player {
   private int pairsInRow = 0;
 
   private boolean isOnHappyCard;
+  private boolean playerMoved;
   // We didn't make a bank-Class because we decided to start with a specific amount of money.
   // Therefore the bank isn't used.
 
@@ -57,6 +58,8 @@ public class Player {
 
   public boolean isOnHappyCard() { return isOnHappyCard; }
 
+  public boolean isPlayerMoved() { return playerMoved; }
+
   // Setter
   public void setPlayerName(String playerName) { this.playerName = playerName; }
 
@@ -70,10 +73,13 @@ public class Player {
 
   public void setIsOnHappyCard(boolean isOnHappyCard) { this.isOnHappyCard = isOnHappyCard; }
 
+  public void setPlayerMoved(boolean playerMoved) { this.playerMoved = playerMoved; }
+
+
   public void setPosition(int position) {
 
     if (position > 39) {
-      position -= 39;
+      position -= 40;
       this.position = position;
 
       System.out.println("You pass start, you will receive 4000");
@@ -130,11 +136,13 @@ public class Player {
   public void getHappyCards() {
 
     if (happyCardsOwned.size() == 0) {
-      System.out.println("You have no cards yet");
+      System.out.println("You have no happy cards yet");
+    } else {
+      System.out.println("Happy Cards:");
     }
 
     for (HappyCard n : happyCardsOwned) {
-      System.out.println("Happy Card: " + n.getNumber());
+      System.out.println(n.getDoSomething());
     }
   }
 

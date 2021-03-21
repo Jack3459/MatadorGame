@@ -9,7 +9,7 @@ public class GameBoard {
   // Colors
   private final String END = "\033[0m";
   private final String BLACK_TEXT = "\033[30m";
-  private final String MAGENTA = "\033[46m";
+  private final String PURPLE = "\033[48:2:150:0:255m";
   private final String ORANGE = "\033[48:2:255:90:0m";
   private final String SHIPPING_BLUE = "\033[48:2:50:0:255m";
   private final String GREEN = "\033[42m";
@@ -34,15 +34,15 @@ public class GameBoard {
   public void renderBoard() {
 
     fields[0]  = new Start("Start", 1);
-    fields[1]  = new Street(MAGENTA + BLACK_TEXT + "Rødovrevej" + END, 2, 50, 1200);
+    fields[1]  = new Street(PURPLE + BLACK_TEXT + "Rødovrevej" + END, 2, 50, 1200);
     fields[2]  = new HappyCardField("Happy card", 3);
-    fields[3]  = new Street(MAGENTA + BLACK_TEXT +"Hvidovrevej" + END, 4, 50, 1200);
+    fields[3]  = new Street(PURPLE + BLACK_TEXT +"Hvidovrevej" + END, 4, 50, 1200);
     fields[4]  = new Taxes("StateTax", 5);
     fields[5]  = new Shipping(SHIPPING_BLUE + "Rederiet Lindinger A/S" + END, 6, 4000);
-    fields[6]  = new Street(ORANGE + "Roskildevej" + END, 7, 100, 2000);
+    fields[6]  = new Street(ORANGE + BLACK_TEXT + "Roskildevej" + END, 7, 100, 2000);
     fields[7]  = new HappyCardField("Happy card", 8);
-    fields[8]  = new Street(ORANGE + "Valby Langgade" + END, 9, 100, 2000);
-    fields[9]  = new Street(ORANGE + "Allégade" + END, 10, 150, 2400);
+    fields[8]  = new Street(ORANGE + BLACK_TEXT + "Valby Langgade" + END, 9, 100, 2000);
+    fields[9]  = new Street(ORANGE + BLACK_TEXT + "Allégade" + END, 10, 150, 2400);
     fields[10] = new PrisonVisit(BLACK + "På Besøg" + END, 11);
     fields[11] = new Street(GREEN + "Frederiksberg Alle" + END, 12, 200, 2800);
     fields[12] = new Brewery(RED + "Coca Cola" + END, 13, 3000);
@@ -70,9 +70,9 @@ public class GameBoard {
     fields[34] = new Street(YELLOW + BLACK_TEXT + "Nygade" + END, 35, 600, 6400);
     fields[35] = new Shipping(SHIPPING_BLUE + "Skandanavisk Liniatrafik A/S" + END, 36, 4000);
     fields[36] = new HappyCardField("Happy card", 37);
-    fields[37] = new Street(MAGENTA + "Frederiksborggade" + END, 38, 900, 7000);
+    fields[37] = new Street(PURPLE + "Frederiksborggade" + END, 38, 900, 7000);
     fields[38] = new Taxes("Tax", 39);
-    fields[39] = new Street(MAGENTA + "Rådhuspladsen" + END, 40, 1000, 8000);
+    fields[39] = new Street(PURPLE + "Rådhuspladsen" + END, 40, 1000, 8000);
 
   }
 

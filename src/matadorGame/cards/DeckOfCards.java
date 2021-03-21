@@ -13,13 +13,18 @@ public class DeckOfCards {
     shuffleDeck();
   }
 
+  // Getter
+
+
+  public ArrayList<HappyCard> getDeckCard() { return deckCards; }
+
   public void renderDeck() {
 
     deckCards.add(new HappyCard(1, "Move to Start. Deposit 4000."));
-    deckCards.add(new HappyCard(2, "Do something else"));
-    deckCards.add(new HappyCard(3, "Do another thing"));
-    deckCards.add(new HappyCard(4, "Keep doing stuff"));
-    deckCards.add(new HappyCard(5, "Do even more stuff"));
+    deckCards.add(new HappyCard(2, "Move to Grenaa-Hundestad, if you pass start deposit 4000."));
+    deckCards.add(new HappyCard(3, "Move 3 rows forward."));
+    deckCards.add(new HappyCard(4, "Pay 3000 for reparation of van."));
+    deckCards.add(new HappyCard(5, "Get out of jail free card."));
 
     top = deckCards.size() - 1;
   }

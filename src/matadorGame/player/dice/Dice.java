@@ -21,4 +21,9 @@ public class Dice {
 
     this.dice = random.nextInt(6) + 1;
   }
+
+  public void setDiceCheat(int dice){
+
+    this.dice = dice;
+  }
 }

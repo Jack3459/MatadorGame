@@ -2,6 +2,8 @@ package matadorGame.moves;
 
 import matadorGame.GameBoard;
 import matadorGame.cards.DeckOfCards;
+import matadorGame.cards.HappyCard;
+import matadorGame.cards.HappyCardAction;
 import matadorGame.player.Player;
 
 import java.util.ArrayList;
@@ -16,6 +18,7 @@ public class PlayMatador {
 
   private GameBoard gameBoard = new GameBoard();
   private DeckOfCards deckOfCards = new DeckOfCards();
+  private HappyCardAction happyCardAction = new HappyCardAction();
   private Scanner scanner = new Scanner(System.in);
 
 
@@ -40,6 +43,10 @@ public class PlayMatador {
 
       switch (option) {
 
+        case 0:
+          cheat(player);
+          movePlayerCheat(player);
+          break;
         case 1:
           movePlayer(player);
           break;
@@ -69,7 +76,8 @@ public class PlayMatador {
       gameBoard.getFields()[player.getPosition()].landOnField(player);
 
       if (!player.inPrison()) {
-        gameBoard.getFields()[player.getPosition() + player.getDiceCup().getDiceSum()].landOnField(player);
+        // gameBoard.getFields()[player.getPosition() + player.getDiceCup().getDiceSum()].landOnField(player);
+        playOptions(player);
       }
 
     }
@@ -131,7 +139,20 @@ public class PlayMatador {
 
   private void ifPlayerHitHappyCard(Player player) {
 
-    player.addHappyCard(deckOfCards.drawCard());
+    HappyCard drawnHappyCard = deckOfCards.drawCard();
+
+    int happyCardNumberIndex = deckOfCards.getDeckCard().indexOf(drawnHappyCard);
+
+    happyCardAction.cardDrawn(drawnHappyCard.getNumber(), player, drawnHappyCard);
+
+    if (player.isPlayerMoved()) {
+      //if the player got a new position
+      gameBoard.getFields()[player.getPosition()].landOnField(player);
+
+      player.setPlayerMoved(false); //stop moving
+    }
+
+    //player.addHappyCard(); // To get out of prison free card
     player.setIsOnHappyCard(false);
 
   }
@@ -169,6 +190,41 @@ public class PlayMatador {
     }
   }
 
+
+  private void cheat(Player player) {
+
+    //cheats options
+    System.out.println("WARNING, DONT USE CHEAT");
+    System.out.print("Enter dice one number: ");
+    int dice = scanner.nextInt();
+    player.getDiceCup().getDiceOne().setDiceCheat(dice);
+
+    System.out.print("Enter dice two number: ");
+    dice = scanner.nextInt();
+    scanner.nextLine();
+    player.getDiceCup().getDiceTwo().setDiceCheat(dice);
+
+  }
+
+  public void movePlayerCheat(Player player) {
+    move = 0;
+
+    int diceThrow = player.getDiceCup().getDiceSum();
+
+    player.setPosition(player.getPosition() + diceThrow);
+    System.out.println("Field position: " + (player.getPosition() + 1));
+
+    move = player.getPosition();
+
+    gameBoard.getFields()[move].landOnField(player);
+
+    if (player.isOnHappyCard()) {
+      ifPlayerHitHappyCard(player);
+    }
+
+    ifPlayerHitPair(player); // one more turn if pair
+
+  }
 
 }
 

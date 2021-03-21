@@ -34,7 +34,7 @@ public class PrisonVisit extends Field {
   }
 
   public void leavePrison(Player player) {
-    prisonOptions();
+    prisonOptions(player);
     int option = scanner.nextInt();
     scanner.nextLine();
 
@@ -74,8 +74,16 @@ public class PrisonVisit extends Field {
 
   }
 
-  private void prisonOptions() {
-    System.out.println("Prison options\n1. throw Dice\n2. Pay penalty\n3. Use happy card");
+  private void prisonOptions(Player player) {
+    System.out.println(player.getPlayerName() + "'s Turn, you are in prison, field nr. " + player.getPosition());
+    System.out.println(
+        """
+            \tPrison options
+            \t1. throw Dice
+            \t2. Pay penalty
+            \t3. Use happy card
+            """
+    );
     System.out.print("Enter option: ");
   }
 }

@@ -27,9 +27,7 @@ public class HappyCard {
 
   // Happy cart Do
 
-  private void movingCard() {
 
-  }
 
 
 }
