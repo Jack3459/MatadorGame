@@ -23,6 +23,13 @@ public class HappyCard {
   public String getDoSomething() {
     return doSomething;
   }
-// Setter
+  // Setter
+
+  // Happy cart Do
+
+  private void movingCard() {
+
+  }
+
 
 }

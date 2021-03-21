@@ -15,7 +15,7 @@ public class DeckOfCards {
 
   public void renderDeck() {
 
-    deckCards.add(new HappyCard(1, "Do something"));
+    deckCards.add(new HappyCard(1, "Move to Start. Deposit 4000."));
     deckCards.add(new HappyCard(2, "Do something else"));
     deckCards.add(new HappyCard(3, "Do another thing"));
     deckCards.add(new HappyCard(4, "Keep doing stuff"));
