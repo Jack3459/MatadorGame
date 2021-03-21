@@ -18,6 +18,7 @@ public class Player {
   private boolean inPrison;
   private int prisonCount;
   private int position = 0;
+  private int pairsInRow = 0;
   // We didn't make a bank-Class because we decided to start with a specific amount of money.
   // Therefore the bank isn't used.
 
@@ -50,6 +51,7 @@ public class Player {
 
   public int getPosition() { return position; }
 
+  public int getPairsInRow() { return pairsInRow; }
 
   // Setter
   public void setPlayerName(String playerName) { this.playerName = playerName; }
@@ -62,7 +64,22 @@ public class Player {
     this.prisonCount = prisonCount;
   }
 
-  public void setPosition(int position) { this.position = position; }
+  public void setPosition(int position) {
+
+    if (position > 39) {
+      position -= 39;
+      this.position = position;
+
+      System.out.println("You pass start, you will receive 4000");
+      depositMoney(4000);
+
+    }
+
+    this.position = position;
+
+  }
+
+  public void setPairsInRow(int pairsInRow) { this.pairsInRow = pairsInRow; }
 
   // Method
   public void depositMoney(int money) {
@@ -94,12 +111,22 @@ public class Player {
   }
 
   public void getCards() {
+
+    if (cardsOwned.size() == 0) {
+      System.out.println("You have no cards yet");
+    }
+
     for (Ownable n : cardsOwned) {
       System.out.println("Property: " + n.getName());
     }
   }
 
   public void getHappyCards() {
+
+    if (happyCardsOwned.size() == 0) {
+      System.out.println("You have no cards yet");
+    }
+
     for (HappyCard n : happyCardsOwned) {
       System.out.println("Happy Card: " + n.getNumber());
     }

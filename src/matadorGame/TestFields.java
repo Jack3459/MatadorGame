@@ -4,6 +4,7 @@ import matadorGame.player.Player;
 
 public class TestFields {
 
+
   private static Player player1 =new Player("Mo");
   private static Player player2 = new Player("Jackie");
   private static Player player3 = new Player("Christoffer");

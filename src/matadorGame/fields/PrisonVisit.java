@@ -75,7 +75,7 @@ public class PrisonVisit extends Field {
   }
 
   private void prisonOptions() {
-    System.out.println("Options\n1. throw Dice\n2. Pay penalty\n3. Use happy card");
+    System.out.println("Prison options\n1. throw Dice\n2. Pay penalty\n3. Use happy card");
     System.out.print("Enter option: ");
   }
 }
