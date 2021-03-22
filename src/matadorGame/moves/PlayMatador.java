@@ -31,6 +31,7 @@ public class PlayMatador {
 
     //while (playing) {
 
+
     if (!player.inPrison()) {
 
       printPlayOptions(player);
