@@ -24,6 +24,17 @@ public class PlayMatador {
   public PlayMatador() {
   }
 
+  // Getter
+
+
+  public GameBoard getGameBoard() {
+    return gameBoard;
+  }
+
+  public DeckOfCards getDeckOfCards() {
+    return deckOfCards;
+  }
+
   // Method
   public void playOptions(Player player) {
 

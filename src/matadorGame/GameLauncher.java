@@ -37,9 +37,13 @@ public class GameLauncher {
           break;
         case 2:
           // show ownable
+          playMatador.getGameBoard().printOwnable();
+          System.out.println();
           break;
         case 3:
           // show happy card
+          playMatador.getDeckOfCards().printDeck();
+          System.out.println();
           break;
         default:
           System.out.println("Not valid");

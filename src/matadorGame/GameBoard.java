@@ -83,6 +83,15 @@ public class GameBoard {
     }
   }
 
+  public void printOwnable() {
+    for (Field field : fields) {
+      if (field instanceof Ownable) {
+        System.out.println(field.getNumber() + ". " + field.getName());
+      }
+
+    }
+  }
+
 
   /*
   public ArrayList<Field> getFields() { return fields; }
