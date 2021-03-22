@@ -3,8 +3,8 @@ package matadorGame.fields;
 public class Shipping extends Ownable {
 
   // Constructor
-  public Shipping(String name, int number, int salePrice) {
-    super(name, number, salePrice);
+  public Shipping(String name, int number, int salePrice, String cardID) {
+    super(name, number, salePrice, cardID);
   }
 
 

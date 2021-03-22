@@ -60,6 +60,8 @@ public class Player {
 
   public boolean isPlayerMoved() { return playerMoved; }
 
+  public ArrayList<Ownable> getCardsOwned() { return cardsOwned; }
+
   public ArrayList<HappyCard> getHappyCardOwned() { return happyCardsOwned; }
 
   // Setter

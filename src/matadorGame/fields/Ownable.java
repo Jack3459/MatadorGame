@@ -11,19 +11,32 @@ public abstract class Ownable extends Field {
 
   private boolean isOwned = false;
   private int rent;
+  private String cardID;
   private int salePrice;
+  private int collection;
   private Player owner;
 
   // Constructor
-  public Ownable(String name, int number, int salePrice) {
+  public Ownable(String name, int number, int salePrice, String cardID) {
     super(name, number);
     this.salePrice = salePrice;
+    this.cardID = cardID;
   }
+
+  public Ownable(String name, int number, int salePrice, String cardID, int collection) {
+    super(name, number);
+    this.salePrice = salePrice;
+    this.cardID = cardID;
+    this.collection = collection;
+  }
+
 
   // Getter
   public boolean getIsOwned() {
     return isOwned;
   }
+
+  public int getCollection() { return collection; }
 
   public int getRent() {
     return rent;
@@ -37,19 +50,18 @@ public abstract class Ownable extends Field {
     return owner;
   }
 
+  public String getCardID() { return cardID; }
+
   // Setter
-  public void setIsOwned(boolean isOwned) {
-    this.isOwned = isOwned;
-  }
+  public void setIsOwned(boolean isOwned) { this.isOwned = isOwned; }
 
-  public void setOwner(Player owner) {
-    this.owner = owner;
-  }
+  public void setCollection(int collection) { this.collection = collection; }
 
-  public void setRent(int rent) {
-    this.rent = rent;
-  }
+  public void setOwner(Player owner) { this.owner = owner; }
 
+  public void setRent(int rent) { this.rent = rent; }
+
+  public void setCardID(String cardID) { this.cardID = cardID; }
 
   // Method
   @Override //Checks if field is owned, if its owned rent has to be paid, else they are promted if they want to buy
@@ -60,8 +72,7 @@ public abstract class Ownable extends Field {
         if (getOwner() == player) {
           player.withdrawMoney(0);
         } else {
-          player.withdrawMoney(rent());
-          getOwner().depositMoney(rent());
+          payRent(player);
         }
       }
     } else {
@@ -71,6 +82,35 @@ public abstract class Ownable extends Field {
       buy(yn, player);
     }
 
+  }
+
+  private void payRent(Player player) {
+
+    if (ownAllFieldsInCollection()) {
+      player.withdrawMoney(rent() * 2);
+      getOwner().depositMoney(rent() * 2);
+    } else {
+      player.withdrawMoney(rent());
+      getOwner().depositMoney(rent());
+    }
+
+  }
+
+  public boolean ownAllFieldsInCollection() {
+    int count = 0;
+
+    if (!cardID.equals("Ship") && !cardID.equals("Brew")) {
+      for (int i = 0; i < getOwner().getCardsOwned().size(); i++) {
+        if (getOwner().getCardsOwned().get(i).getCardID().equals(cardID)) {
+          count++;
+          if (count == getOwner().getCardsOwned().get(i).getCollection()) {
+            return true;
+          }
+        }
+      }
+    }
+
+    return false;
   }
 
   public abstract int rent();

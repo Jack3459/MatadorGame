@@ -5,8 +5,8 @@ import matadorGame.player.Player;
 public class Brewery extends Ownable {
 
   // Constructor
-  public Brewery(String name, int number, int salePrice) {
-    super(name, number, salePrice);
+  public Brewery(String name, int number, int salePrice, String cardID) {
+    super(name, number, salePrice, cardID);
   }
   private Player hitField;
 

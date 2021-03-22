@@ -4,7 +4,7 @@ import matadorGame.fields.*;
 
 public class GameBoard {
   //ArrayList<Field> fields = new ArrayList<>();
-  private Field[] fields = new Field[40];
+  private final Field[] fields = new Field[40];
 
   // Colors
   private final String END = "\033[0m";
@@ -35,45 +35,45 @@ public class GameBoard {
   public void renderBoard() {
 
     fields[0]  = new Start("Start", 1);
-    fields[1]  = new Street(LIGHT_BLUE + BLACK_TEXT + "Rødovrevej" + END, 2, 50, 1200);
+    fields[1]  = new Street(LIGHT_BLUE + BLACK_TEXT + "Rødovrevej" + END, 2, 50, 1200, "Blue", 2);
     fields[2]  = new HappyCardField("Happy card", 3);
-    fields[3]  = new Street(LIGHT_BLUE + BLACK_TEXT +"Hvidovrevej" + END, 4, 50, 1200);
+    fields[3]  = new Street(LIGHT_BLUE + BLACK_TEXT +"Hvidovrevej" + END, 4, 50, 1200, "Blue", 2);
     fields[4]  = new Taxes("StateTax", 5);
-    fields[5]  = new Shipping(SHIPPING_BLUE + "Rederiet Lindinger A/S" + END, 6, 4000);
-    fields[6]  = new Street(ORANGE + BLACK_TEXT + "Roskildevej" + END, 7, 100, 2000);
+    fields[5]  = new Shipping(SHIPPING_BLUE + "Rederiet Lindinger A/S" + END, 6, 4000, "Ship");
+    fields[6]  = new Street(ORANGE + BLACK_TEXT + "Roskildevej" + END, 7, 100, 2000, "Orange", 3);
     fields[7]  = new HappyCardField("Happy card", 8);
-    fields[8]  = new Street(ORANGE + BLACK_TEXT + "Valby Langgade" + END, 9, 100, 2000);
-    fields[9]  = new Street(ORANGE + BLACK_TEXT + "Allégade" + END, 10, 150, 2400);
+    fields[8]  = new Street(ORANGE + BLACK_TEXT + "Valby Langgade" + END, 9, 100, 2000, "Orange", 3);
+    fields[9]  = new Street(ORANGE + BLACK_TEXT + "Allégade" + END, 10, 150, 2400, "Orange", 3);
     fields[10] = new PrisonVisit(BLACK + "På Besøg" + END, 11);
-    fields[11] = new Street(GREEN + "Frederiksberg Alle" + END, 12, 200, 2800);
-    fields[12] = new Brewery(RED + "Coca Cola" + END, 13, 3000);
-    fields[13] = new Street(GREEN + "Bülowsvej" + END, 14, 200, 2800);
-    fields[14] = new Street(GREEN + "Gl. Kongevej" + END, 15, 250, 3200);
-    fields[15] = new Shipping(SHIPPING_BLUE + "Grenaa-hundested" + END, 16, 4000);
-    fields[16] = new Street(GRAY + BLACK_TEXT + "Bernstorffsvej" + END, 17, 300, 3600);
+    fields[11] = new Street(GREEN + "Frederiksberg Alle" + END, 12, 200, 2800, "Green", 3);
+    fields[12] = new Brewery(RED + "Coca Cola" + END, 13, 3000, "Brew");
+    fields[13] = new Street(GREEN + "Bülowsvej" + END, 14, 200, 2800, "Green", 3);
+    fields[14] = new Street(GREEN + "Gl. Kongevej" + END, 15, 250, 3200, "Green", 3);
+    fields[15] = new Shipping(SHIPPING_BLUE + "Grenaa-hundested" + END, 16, 4000, "Ship");
+    fields[16] = new Street(GRAY + BLACK_TEXT + "Bernstorffsvej" + END, 17, 300, 3600, "Gray", 3);
     fields[17] = new HappyCardField("Happy card", 18);
-    fields[18] = new Street(GRAY + BLACK_TEXT + "Hellerupvej" + END, 19, 300, 3600);
-    fields[19] = new Street(GRAY + BLACK_TEXT + "Strandvej" + END, 20, 350, 4000);
+    fields[18] = new Street(GRAY + BLACK_TEXT + "Hellerupvej" + END, 19, 300, 3600, "Gray", 3);
+    fields[19] = new Street(GRAY + BLACK_TEXT + "Strandvej" + END, 20, 350, 4000, "Gray", 3);
     fields[20] = new Refuge("Parking", 21);
-    fields[21] = new Street(RED + "Trianglen" + END, 22, 350, 4400);
+    fields[21] = new Street(RED + "Trianglen" + END, 22, 350, 4400, "Red", 3);
     fields[22] = new HappyCardField("Happy card", 23);
-    fields[23] = new Street(RED + "Østerbrogade" + END, 24, 350, 4400);
-    fields[24] = new Street(RED + "Grønningen" + END, 25, 400, 4800);
-    fields[25] = new Shipping(SHIPPING_BLUE + "Mols-Linien A/S" + END, 26, 4000);
-    fields[26] = new Street(WHITE + BLACK_TEXT + "Bredgade" + END, 27, 450, 5200);
-    fields[27] = new Street(WHITE + BLACK_TEXT + "Kgs. Nytorv" + END, 28, 450, 4800);
-    fields[28] = new Brewery(GREEN + "Faxe Bryggeri" + END, 29, 3000);
-    fields[29] = new Street(WHITE + BLACK_TEXT + "Østergade" + END, 30, 500, 5600);
+    fields[23] = new Street(RED + "Østerbrogade" + END, 24, 350, 4400, "Red", 3);
+    fields[24] = new Street(RED + "Grønningen" + END, 25, 400, 4800, "Red", 3);
+    fields[25] = new Shipping(SHIPPING_BLUE + "Mols-Linien A/S" + END, 26, 4000, "Ship");
+    fields[26] = new Street(WHITE + BLACK_TEXT + "Bredgade" + END, 27, 450, 5200, "White", 3);
+    fields[27] = new Street(WHITE + BLACK_TEXT + "Kgs. Nytorv" + END, 28, 450, 4800, "White", 3);
+    fields[28] = new Brewery(GREEN + "Faxe Bryggeri" + END, 29, 3000, "Brew");
+    fields[29] = new Street(WHITE + BLACK_TEXT + "Østergade" + END, 30, 500, 5600, "White", 3);
     fields[30] = new Prison(BLACK + "In prison" + END, 31);
-    fields[31] = new Street(YELLOW + BLACK_TEXT + "Amagertorv" + END, 32, 550, 6000);
-    fields[32] = new Street(YELLOW + BLACK_TEXT + "Vimmelskaftet" + END, 33, 550, 6000);
+    fields[31] = new Street(YELLOW + BLACK_TEXT + "Amagertorv" + END, 32, 550, 6000, "Yellow", 3);
+    fields[32] = new Street(YELLOW + BLACK_TEXT + "Vimmelskaftet" + END, 33, 550, 6000, "Yellow", 3);
     fields[33] = new HappyCardField("Happy card", 34);
-    fields[34] = new Street(YELLOW + BLACK_TEXT + "Nygade" + END, 35, 600, 6400);
-    fields[35] = new Shipping(SHIPPING_BLUE + "Skandanavisk Liniatrafik A/S" + END, 36, 4000);
+    fields[34] = new Street(YELLOW + BLACK_TEXT + "Nygade" + END, 35, 600, 6400, "Yellow", 3);
+    fields[35] = new Shipping(SHIPPING_BLUE + "Skandanavisk Liniatrafik A/S" + END, 36, 4000, "Ship");
     fields[36] = new HappyCardField("Happy card", 37);
-    fields[37] = new Street(PURPLE + "Frederiksborggade" + END, 38, 900, 7000);
+    fields[37] = new Street(PURPLE + "Frederiksborggade" + END, 38, 900, 7000, "Purple", 2);
     fields[38] = new Taxes("Tax", 39);
-    fields[39] = new Street(PURPLE + "Rådhuspladsen" + END, 40, 1000, 8000);
+    fields[39] = new Street(PURPLE + "Rådhuspladsen" + END, 40, 1000, 8000, "Purple", 2);
 
   }
 
