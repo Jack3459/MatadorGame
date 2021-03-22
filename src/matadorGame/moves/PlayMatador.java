@@ -21,10 +21,8 @@ public class PlayMatador {
   private HappyCardAction happyCardAction = new HappyCardAction();
   private Scanner scanner = new Scanner(System.in);
 
-
   public PlayMatador() {
   }
-
 
   // Method
   public void playOptions(Player player) {
@@ -32,7 +30,6 @@ public class PlayMatador {
     boolean playing = true;
 
     //while (playing) {
-
 
     if (!player.inPrison()) {
 
