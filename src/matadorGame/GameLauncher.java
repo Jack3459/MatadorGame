@@ -52,7 +52,7 @@ public class GameLauncher {
   public void optionsMenu() {
     System.out.println(
         """
-        \t\033[5mMATADOR\033[0m
+        \tMATADOR
         \t1. Start Game
         \t2. See all cards
         \t3. See all happy cards
