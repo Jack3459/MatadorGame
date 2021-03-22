@@ -57,7 +57,7 @@ public class PrisonVisit extends Field {
           player.setPrisonCount(0);
           break;
         case 3:
-          // use happy card.. (:
+          useHappyCard(player);
           break;
         default:
           // prøv igen
@@ -86,4 +86,17 @@ public class PrisonVisit extends Field {
     );
     System.out.print("Enter option: ");
   }
+
+  private void useHappyCard(Player player) {
+    if (player.getHappyCardOwned().isEmpty()) {
+      System.out.println("You don't have any cards");
+      leavePrison(player);
+    } else {
+      System.out.println("You got out");
+      player.getHappyCardOwned().remove(0);
+      player.setInPrison(false);
+      player.setPrisonCount(0);
+    }
+  }
+
 }

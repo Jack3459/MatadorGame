@@ -10,6 +10,7 @@ public class GameBoard {
   private final String END = "\033[0m";
   private final String BLACK_TEXT = "\033[30m";
   private final String PURPLE = "\033[48:2:150:0:255m";
+  private final String LIGHT_BLUE = "\033[48:2:50:200:235m";
   private final String ORANGE = "\033[48:2:255:90:0m";
   private final String SHIPPING_BLUE = "\033[48:2:50:0:255m";
   private final String GREEN = "\033[42m";
@@ -34,9 +35,9 @@ public class GameBoard {
   public void renderBoard() {
 
     fields[0]  = new Start("Start", 1);
-    fields[1]  = new Street(PURPLE + BLACK_TEXT + "Rødovrevej" + END, 2, 50, 1200);
+    fields[1]  = new Street(LIGHT_BLUE + BLACK_TEXT + "Rødovrevej" + END, 2, 50, 1200);
     fields[2]  = new HappyCardField("Happy card", 3);
-    fields[3]  = new Street(PURPLE + BLACK_TEXT +"Hvidovrevej" + END, 4, 50, 1200);
+    fields[3]  = new Street(LIGHT_BLUE + BLACK_TEXT +"Hvidovrevej" + END, 4, 50, 1200);
     fields[4]  = new Taxes("StateTax", 5);
     fields[5]  = new Shipping(SHIPPING_BLUE + "Rederiet Lindinger A/S" + END, 6, 4000);
     fields[6]  = new Street(ORANGE + BLACK_TEXT + "Roskildevej" + END, 7, 100, 2000);

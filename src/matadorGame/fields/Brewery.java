@@ -15,13 +15,15 @@ public class Brewery extends Ownable {
   @Override
   public void landOnField(Player player) {
     System.out.println(player.getPlayerName() + " have landed on " + getName());
-    if (getIsOwned() == true) {
-      if (getOwner() == player) {
-        player.withdrawMoney(0);
-      } else {
-        hitField = player;
-        player.withdrawMoney(rent());
-        getOwner().depositMoney(rent());
+    if (getIsOwned()) {
+      if (!getOwner().inPrison()) {
+        if (getOwner() == player) {
+          player.withdrawMoney(0);
+        } else {
+          hitField = player;
+          player.withdrawMoney(rent());
+          getOwner().depositMoney(rent());
+        }
       }
     } else {
       System.out.println("Do you want to buy: " + getName() + "?\nSalesPrice is: " + getSalePrice());
@@ -34,14 +36,6 @@ public class Brewery extends Ownable {
 
 
   // Rent is calculated based on player dicerolls, and how many properties are owned
-/*  public int rent(Player player) {
-
-    int diceHit = player.getDiceCup().getDiceSum();
-    int more = getOwner().getCountBrewery();
-
-
-    return diceHit * 100 * more;
-  }*/
 
   @Override
   public int rent() {

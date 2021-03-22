@@ -162,9 +162,10 @@ public class PlayMatador {
     if (player.getDiceCup().isPair()) {
       System.out.println("Hit pair");
       player.setPairsInRow(player.getPairsInRow() + 1);
-      if (player.getPairsInRow() < 4) {
+      if (player.getPairsInRow() < 3) {
         playOptions(player);
       } else {
+        System.out.println("You hit pair in 3 rows, move to prison.");
         player.setInPrison(true); // go to prison;
         player.setPosition(10); // moves to prison
         player.setPairsInRow(0); // reset pairs in row

@@ -55,12 +55,14 @@ public abstract class Ownable extends Field {
   @Override //Checks if field is owned, if its owned rent has to be paid, else they are promted if they want to buy
   public void landOnField(Player player) {
     System.out.println(player.getPlayerName() + " have landed on " + getName());
-    if (getIsOwned() == true) {
-      if (getOwner() == player) {
-        player.withdrawMoney(0);
-      } else {
-        player.withdrawMoney(rent());
-        getOwner().depositMoney(rent());
+    if (getIsOwned()) {
+      if (!getOwner().inPrison()) {
+        if (getOwner() == player) {
+          player.withdrawMoney(0);
+        } else {
+          player.withdrawMoney(rent());
+          getOwner().depositMoney(rent());
+        }
       }
     } else {
       System.out.println("Do you want to buy " + getName() + "?\nSalesPrice is: " + getSalePrice());
@@ -68,6 +70,7 @@ public abstract class Ownable extends Field {
       boolean yn = scanner.nextBoolean();
       buy(yn, player);
     }
+
   }
 
   public abstract int rent();

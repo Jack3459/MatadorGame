@@ -60,6 +60,8 @@ public class Player {
 
   public boolean isPlayerMoved() { return playerMoved; }
 
+  public ArrayList<HappyCard> getHappyCardOwned() { return happyCardsOwned; }
+
   // Setter
   public void setPlayerName(String playerName) { this.playerName = playerName; }
 
